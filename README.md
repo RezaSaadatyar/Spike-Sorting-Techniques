@@ -5,17 +5,17 @@ There are three main stages in the algorithm: (1) spike detection, (2) spike fea
 
 In the ﬁrst step, spikes are detected with an automatic amplitude threshold on the band-pass ﬁltered data. In the second step, a small set of wavelet coefﬁcients from each spike is chosen as input for the clustering algorithm. Finally, the K-means classiﬁes the spikes according to the selected set of wavelet coefﬁcients.
 
-* Fs = 30000 Hz;              % Sampling frequency  
-* F_low = 300 Hz;             % low pass filter for detection  
-* F_high =3000 Hz;            % high pass filter for spike detection  
+* Fs = 30000 Hz;                 % Sampling frequency  
+* F_low = 300 Hz;                % low pass filter for detection  
+* F_high =3000 Hz;               % high pass filter for spike detection  
 
-####### Threshold:
-* T_min = 5;                 % minimum threshold for estimated noise 
-* T_max = 12;                % maximum threshold for avoid high amplitude artifact 
+###### Threshold:
+* T_min = 5;                     % minimum threshold for estimated noise 
+* T_max = 12;                    % maximum threshold for avoid high amplitude artifact 
 
 ###### Detect spike times:
-* w_pre = 20;                 % w_pre datapoints before the spike peak are stored
-* w_post =40;                 % w_post datapoints after the spike peak are stored 
+* w_pre = 20;                     % w_pre datapoints before the spike peak are stored
+* w_post =40;                     % w_post datapoints after the spike peak are stored 
 
 Reza.Saadatyar@outlook.com
 
