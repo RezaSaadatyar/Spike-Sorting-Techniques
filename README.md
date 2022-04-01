@@ -9,7 +9,7 @@ Fs = 30000 Hz;              % Sampling frequency
 F_low = 300 Hz;             % low pass filter for detection  
 F_high =3000 Hz;            % high pass filter for spike detection  
 
-Threshold
+
 T_min = 5;                 % minimum threshold for estimated noise 
 T_max = 12;                % maximum threshold for avoid high amplitude artifact 
 
