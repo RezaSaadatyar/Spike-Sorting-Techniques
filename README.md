@@ -17,6 +17,8 @@ In the ﬁrst step, spikes are detected with an automatic amplitude threshold on
 * w_pre = 20;                     % w_pre datapoints before the spike peak are stored
 * w_post =40;                     % w_post datapoints after the spike peak are stored 
 
+Please Run Code Main.m, the Software will run automatically and there is no need to run test code
+
 Reza.Saadatyar@outlook.com
 
 ![Fig 1](https://user-images.githubusercontent.com/96347878/161287895-da71b39e-3021-4504-aa00-fc82563f743e.png)
