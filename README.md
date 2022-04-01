@@ -8,3 +8,4 @@ In the ﬁrst step, spikes are detected with an automatic amplitude threshold on
 Fs = 30000 Hz;              % Sampling frequency  
 F_low = 300 Hz;             % low pass filter for detection  
 F_high =3000 Hz;            % high pass filter for spike detection  
+Reza.Saadatyar@outlook.com
