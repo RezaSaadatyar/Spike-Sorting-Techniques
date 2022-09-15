@@ -28,3 +28,7 @@ Reza.Saadatyar@outlook.com
 ![Fig 3](https://user-images.githubusercontent.com/96347878/161295295-a9241f44-24dd-46e0-be94-ddd8bf5c7191.png)
 
 ![Fig 4](https://user-images.githubusercontent.com/96347878/161295539-74ee8a41-c554-446a-bc28-bdcb3bbf297f.png)
+
+![LFP and Spike](https://user-images.githubusercontent.com/96347878/190426102-ca234081-6c7e-496d-bd3d-df2d0a20a709.png)
+![Spike-field coherance](https://user-images.githubusercontent.com/96347878/190426133-7cb57ce4-d2f1-4f74-a9ed-9ce2471194bb.png)
+
