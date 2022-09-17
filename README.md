@@ -1,4 +1,5 @@
 **Analysis of Neural Data**
+
 This repository includes useful MATLAB codes for ENG analysis.
 
 There are three main stages in the algorithm: (1) spike detection, (2) spike feature selection (Wavelet), and (3) clustering of the selected spike features (K-means).
