@@ -1,34 +1,48 @@
-**Analysis of Neural Data**
+# Neurophysiological Signal Processing and Analysis
 
-This repository includes useful MATLAB codes for ENG analysis.
+This repository contains tools and scripts for processing and analyzing neurophysiological signals, focusing on spike detection, feature extraction, clustering, and firing rate analysis. Below is an overview of the steps involved in the pipeline and the functionalities provided by the software.
 
-There are three main stages in the algorithm: (1) spike detection, (2) spike feature selection (Wavelet), and (3) clustering of the selected spike features (K-means).
+## Steps in the Pipeline
 
-In the ﬁrst step, spikes are detected with an automatic amplitude threshold on the band-pass ﬁltered data. In the second step, a small set of wavelet coefﬁcients from each spike is chosen as input for the clustering algorithm. Finally, the K-means classiﬁes the spikes according to the selected set of wavelet coefﬁcients.
+1. **Data Import and Preprocessing**
+   - Import data from various formats (e.g., `.mat`, `.txt`, `.xlsx`).
+   - Perform artifact removal and filtering using methods like Moving Average, Butterworth, Chebyshev, and Elliptic filters.
+   - Apply band-pass filtering to the waveform.
+   - Fs = 30000 Hz;                 % Sampling frequency  
+   - F_low = 300 Hz;                % low pass filter for detection  
+   - F_high =3000 Hz;               % high pass filter for spike detection  
 
-* Fs = 30000 Hz;                 % Sampling frequency  
-* F_low = 300 Hz;                % low pass filter for detection  
-* F_high =3000 Hz;               % high pass filter for spike detection  
+2. **Spike Detection**
+   - Use amplitude threshold discrimination to detect spikes.
+   - Record spike times and align events.
 
-###### Threshold:
-* T_min = 5;                     % minimum threshold for estimated noise 
-* T_max = 12;                    % maximum threshold for avoid high amplitude artifact 
+3. **Feature Extraction**
+   - Extract feature coefficients using Principal Component Analysis (PCA) and Wavelet Transform.
+   - Select relevant feature coefficients for further analysis.
 
-###### Detect spike times:
-* w_pre = 20;                     % w_pre datapoints before the spike peak are stored
-* w_post =40;                     % w_post datapoints after the spike peak are stored 
+4. **Spike Clustering**
+   - Cluster spikes using unsupervised algorithms such as Fuzzy C-Means (FCM), and K-Means.
 
-Please Run Code Main.m, the Software will run automatically and there is no need to run test code
+5. **Firing Rate and ISI Analysis**
+   - Analyze the distribution of firing rates.
+   - Compute Interspike Interval (ISI) histograms and autocorrelograms for each class.
 
-Reza.Saadatyar@outlook.com
+6. **Visualization and Results**
+   - Generate and display firing rate figures, ISI histograms, and autocorrelograms.
+   - Save results for further analysis.
 
-![Fig 1](https://user-images.githubusercontent.com/96347878/161287895-da71b39e-3021-4504-aa00-fc82563f743e.png)
+## Contributing
 
-![Fig 2](https://user-images.githubusercontent.com/96347878/161290847-c900dbc1-ef80-4b56-95e4-28ed376e0124.png)
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
-![Fig 3](https://user-images.githubusercontent.com/96347878/161295295-a9241f44-24dd-46e0-be94-ddd8bf5c7191.png)
+## License
 
-![Fig 4](https://user-images.githubusercontent.com/96347878/161295539-74ee8a41-c554-446a-bc28-bdcb3bbf297f.png)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-![LFP and Spike](https://user-images.githubusercontent.com/96347878/190426102-ca234081-6c7e-496d-bd3d-df2d0a20a709.png)
-![Spike-field coherance](https://user-images.githubusercontent.com/96347878/190426133-7cb57ce4-d2f1-4f74-a9ed-9ce2471194bb.png)
+## Contact
+
+For any questions or support, please contact Reza.Saadatyar@outlook.com.
+
+![Uploading gifmaker_me.gif…]()
+
+
