@@ -2,6 +2,8 @@
 
 This repository contains tools and scripts for processing and analyzing neurophysiological signals, focusing on spike detection, feature extraction, clustering, and firing rate analysis. Below is an overview of the steps involved in the pipeline and the functionalities provided by the software.
 
+The software described in the repository appears to be a comprehensive tool for neurophysiological signal processing, which could be highly relevant to the study described in the article "[Restoring the firing activity of ventral tegmental area neurons by lateral hypothalamic deep brain stimulation following morphine administration in rats](https://www.sciencedirect.com/science/article/abs/pii/S0031938423001348)".
+
 ## Steps in the Pipeline
 
 1. **Data Import and Preprocessing**
@@ -42,7 +44,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For any questions or support, please contact Reza.Saadatyar@outlook.com.
-
-
 
 ![Image](https://github.com/user-attachments/assets/61ec7e53-b27d-4046-ba9f-98082996d339)
