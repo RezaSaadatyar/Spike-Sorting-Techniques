@@ -4,38 +4,79 @@
 % ============================== Email: Reza.Saadatyar@outlook.com =============================
 % ======================================= 2019-2020 ============================================
 
-function [Firing_Rate, Time_Firing] = firing_rate(xf, fss, index, Labels, binTime, binFR,S)
+% Function to calculate the firing rate of spikes
+function [Firing_Rate, Time_Firing] = firing_rate(xf, fss, index, Labels, binTime, binFR, S)
 
-Firing_Rate=0;Time_Firing=0;S.spikepersec.Value=0;S.countperbin.Value=0;
-Win=str2double(get(binFR,'string')); VbinTime=get(binTime,'value');
+% Initialize output variables and reset GUI flags
+Firing_Rate = 0; Time_Firing = 0; 
+S.spikepersec.Value = 0; S.countperbin.Value = 0;
 
-if length(xf)<2;msgbox('Please Select Input Type in Block Spike Detection','','warn');return;end
-if Labels==0;msgbox('Please Enter Parameters Cluster in Section Clustring','','warn');return;end%&&
-if index==0;msgbox('Please Set Spike Detection Parameters in Section Spike Detection','','warn');return;end
-if isnan(Win)||(Win<=0);msgbox('Please Enter Bin > 0','','warn');return;end
-if isnan(fss)||(fss<=0);fss=str2double(inputdlg({'Enter Fs'},'Sampling Frequency ',[1 45]));
-if isnan(sum(fss(:)))||isempty(fss);msgbox('Please Enter Fs as scalars','','warn');return;end
-end       
+% Retrieve the bin size for firing rate calculation
+Win = str2double(get(binFR, 'string')); 
+VbinTime = get(binTime, 'value'); 
 
-Time = (0:length(xf)-1)/fss; index=index/fss;
-if Time(end)<1; msgbox('Totall time < 1 Second','','warn');return;end  
-% if VbinTime==3; Time=Time/60;index=index/60;
-% if Time(end)<1;msgbox('Please Select Second; Totall time < 60 Second','','warn');return;end    
-% elseif VbinTime==4;Time=Time/3600;index=index/3600;
-% if Time(end)<1;msgbox('Please Select Minute; Totall time < 60 Minute','','warn');return;end      
-% end
-
-%% ==================================== firing rate multi unit =================================
-if max(Labels)>1;Firing_Rate=zeros(max(Labels)+1,length(Time_Firing));else
-Firing_Rate=zeros(1,length(Time_Firing));end
-
-spk_times=index';Time_Firing=min(Time):Win:max(Time);
-for i=1:length(Time_Firing);Firing_Rate(1,i)=sum(spk_times<=Time_Firing(i)+Win & spk_times>Time_Firing(i))/Win;end
-%% ================================ firing rate single unit ====================================
-if max(Labels)>1
-for unit_fr=1:max(Labels);spk_times=index(Labels==unit_fr)';       
-  for i=1:length(Time_Firing);Firing_Rate(unit_fr+1,i)=sum(spk_times<=Time_Firing(i)+Win & spk_times>Time_Firing(i))/Win;end
-end 
+% Validate input data
+if length(xf) < 2
+    msgbox('Please Select Input Type in Block Spike Detection', '', 'warn'); 
+    return; 
 end
+if Labels == 0
+    msgbox('Please Enter Parameters Cluster in Section Clustering', '', 'warn'); 
+    return; 
+end
+if index == 0
+    msgbox('Please Set Spike Detection Parameters in Section Spike Detection', '', 'warn'); 
+    return; 
+end
+if isnan(Win) || (Win <= 0)
+    msgbox('Please Enter Bin > 0', '', 'warn'); 
+    return; 
+end
+if isnan(fss) || (fss <= 0)
+    % Prompt user to enter sampling frequency if not provided
+    fss = str2double(inputdlg({'Enter Fs'}, 'Sampling Frequency', [1 45])); 
+    if isnan(sum(fss(:))) || isempty(fss)
+        msgbox('Please Enter Fs as scalars', '', 'warn'); 
+        return; 
+    end
+end
+
+% Convert spike indices to time and validate total time
+Time = (0:length(xf) - 1) / fss; % Time vector for the signal
+index = index / fss; % Convert spike indices to time
+if Time(end) < 1
+    msgbox('Total time < 1 Second', '', 'warn'); 
+    return; 
+end
+
+%% ==================================== Firing Rate Multi-Unit =================================
+% Initialize firing rate matrix
+if max(Labels) > 1
+    Firing_Rate = zeros(max(Labels) + 1, length(Time_Firing)); % For multiple units
+else
+    Firing_Rate = zeros(1, length(Time_Firing)); % For a single unit
+end
+
+% Calculate firing rate for the entire population (all units)
+spk_times = index'; % Spike times in seconds
+Time_Firing = min(Time):Win:max(Time); % Time bins for firing rate calculation
+for i = 1:length(Time_Firing)
+    % Count spikes in the current bin and normalize by bin size
+    Firing_Rate(1, i) = sum(spk_times <= Time_Firing(i) + Win & spk_times > Time_Firing(i)) / Win;
+end
+
+%% ================================ Firing Rate Single Unit ====================================
+% Calculate firing rate for individual units (if multiple units exist)
+if max(Labels) > 1
+    for unit_fr = 1:max(Labels)
+        spk_times = index(Labels == unit_fr)'; % Spike times for the current unit
+        for i = 1:length(Time_Firing)
+            % Count spikes in the current bin and normalize by bin size
+            Firing_Rate(unit_fr + 1, i) = sum(spk_times <= Time_Firing(i) + Win & spk_times > Time_Firing(i)) / Win;
+        end
+    end
+end
+
+% Notify user that the operation is completed
 msgbox('Operation Completed');
 end
