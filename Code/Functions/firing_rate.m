@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function [Firing_Rate, Time_Firing] = firing_rate(xf, fss, index, Labels, binTime, binFR,S)
 
 Firing_Rate=0;Time_Firing=0;S.spikepersec.Value=0;S.countperbin.Value=0;

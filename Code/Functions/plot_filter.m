@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function plot_filter(Input,DataFilter,fss,design,display,input,time,time1,time2,ax1,ax2,CM,cm)
 
 cla(ax1);axes(ax1);cla(ax2);axes(ax2);ax1.NextPlot='replaceall';ax2.NextPlot='replaceall';

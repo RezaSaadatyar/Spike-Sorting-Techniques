@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function [Center,Mu] = fcm_cluster(InputClust,NumClus,Center,Nepoch,m)
 %% step 1: initialize membership functions, determine number of culsters
 N= size(InputClust,2);d= size(InputClust,1);Mu= rand(NumClus,N);

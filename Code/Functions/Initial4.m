@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function [xf,spikes,index,Vthrmi,Vthrmn,timspk]=Initial4(Data,DataFilter,inp,inputf,detec,...
 pre,pos,thrmi,thrma,alig,xlt,thrmineg,pren,posn,Exec,time3)
 

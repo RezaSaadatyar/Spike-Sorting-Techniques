@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function [index,spikes,timspk]=threshold(xf,fss,Sigma,detec,thresh,thrmi,thrmineg,thrma,pre,pos,pren,...
 posn,alig,Exec,time3,time4,time5,time6,waw,slid1,slid2,tabe2,ax3,ax4,ax5,CM,cm,S)
 

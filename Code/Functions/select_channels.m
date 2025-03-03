@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function Input=Select_Channels(Inputch,Chi,Chj,input,inp,checkFil)
 Input=0;
 if get(inp,'value')==1;msgbox('Please Select Input in Block Load Data','','warn');return;end

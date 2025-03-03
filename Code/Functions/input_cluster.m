@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function InputClust = input_cluster(pcafea,wavfea,plotc,inpclust,cursor,numcl,ax12,cm,S)
 
 InputClust=0;S.auto.Value=0;S.manual.Value=0;set(numcl,'value',1)

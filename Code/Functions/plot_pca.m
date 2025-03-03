@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function pcafea=plot_pca(spikes,PcaSpik,Feat1,Feat2,Feat3,dispca,diswave,ax8,ax9,ax10,ax11,cm,S)
 
 set(diswave,'value',0);pcafea=0;ax8.NextPlot='replaceall';ax9.NextPlot='replaceall';

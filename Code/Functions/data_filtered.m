@@ -1,3 +1,9 @@
+%% =============================================================================================
+% ================================= Spike Extraction Software ==================================
+% ================================ Presented by: Reza Saadatyar ================================
+% ============================== Email: Reza.Saadatyar@outlook.com =============================
+% ======================================= 2019-2020 ============================================
+
 function [DataFilter,fss,Sigma]=data_filtered(Input,fs,fl,fh,rp,rs,order,design,...
 response,window,checkFil,Fnotch,notch,display,tabel,time1,time2,time,S)
 
